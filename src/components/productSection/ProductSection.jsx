@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { GET } from "../../utils/HTTP";
 import "./index.css";
 
-const ProductSection = ({ productSection }) => {
+const ProductSection = ({ productSection, setProductSection }) => {
   const [productData, setProductData] = useState({});
 
   useEffect(() => {
     GET("?s=" + productSection).then((data) => setProductData(data.drinks[0]));
   }, []);
+
+  const onHandleClick = () => setProductSection("");
 
   return (
     <div className="ProductSection">
@@ -26,6 +28,9 @@ const ProductSection = ({ productSection }) => {
         <li>{productData.strIngredient4}</li>
       </ul>
       <p className="ProductSection__instruct">{productData.strInstructions}</p>
+      <button className="ProductSection__close--button" onClick={onHandleClick}>
+        ❌
+      </button>
     </div>
   );
 };

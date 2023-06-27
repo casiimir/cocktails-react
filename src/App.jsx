@@ -1,14 +1,26 @@
 // import cocktailLogo from "./assets/cocktail.svg";
-import ProductSection from "./components/productSection/ProductSection";
-import "./App.css";
 import { useState } from "react";
+import ProductSection from "./components/productSection";
+import ProductList from "./components/productList";
+import "./App.css";
 
 function App() {
-  const [productSection, setProductSection] = useState("margarita");
+  const [productSection, setProductSection] = useState("");
 
   return (
     <div className="App">
-      <ProductSection productSection={productSection} />
+      {productSection ? (
+        <ProductSection
+          productSection={productSection}
+          setProductSection={setProductSection}
+        />
+      ) : (
+        <>
+          <ProductList name="rum" setProductSection={setProductSection} />
+          <ProductList name="vodka" setProductSection={setProductSection} />
+          <ProductList name="gin" setProductSection={setProductSection} />
+        </>
+      )}
     </div>
   );
 }
