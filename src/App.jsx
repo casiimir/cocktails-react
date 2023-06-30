@@ -14,7 +14,11 @@ function App() {
   const onRender = () => {
     switch (productSection) {
       case "contacts":
-        return <Contacts />;
+        return (
+          <div className="App__contacts">
+            <Contacts />
+          </div>
+        );
       case "":
         return (
           <>
