@@ -1,5 +1,6 @@
 # Esercizio
 
-Creare sezione relativa alla ricerca, che al submit faccia comparire la 'pagina' del prodotto ricercato (che includa anche una porzione di user input). Se non esiste, ovviamente messaggino in rosso.
+Creare sezione relativa ai filtri, che al submit gestisca la lista di prodotti da visualizzare.
 
 - Utilizzare i controlled components!
+- Utilizzare gli oggetti piuttosto che gli array (come visto a lezione)
