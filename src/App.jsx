@@ -4,6 +4,7 @@ import ProductSection from "./components/productSection";
 import ProductList from "./components/productList";
 import Contacts from "./components/contacts/Contacts";
 import "./App.css";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const [productSection, setProductSection] = useState("");
@@ -32,10 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <ul>
-        <li onClick={() => setProductSection("")}>Home</li>
-        <li onClick={() => setProductSection("contacts")}>Contacts</li>
-      </ul>
+      <Navbar setProductSection={setProductSection} />
       {onRender()}
     </div>
   );
